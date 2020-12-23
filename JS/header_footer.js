@@ -139,7 +139,7 @@ template.innerHTML = `
                 <td>
                     <h3>HỖ TRỢ KHÁCH HÀNG</h3>
                     <hr class="hr-tag-footer"/>
-                    <p class="noi-dung-footer"> <a href="lienhe.html" >Liên Hệ Đến WECO</a></p>
+                    <p class="noi-dung-footer"> <a href="LienHe.html" >Liên Hệ Đến WECO</a></p>
                     <p class="noi-dung-footer"> <a href="Chinhsachdoitra.html" >Chính sách đổi trả</a> </p>
                     <p class="noi-dung-footer"> <a href="Chinhsachbaomat.html" >Chính sách bảo mật</a></p>
                     <p class="noi-dung-footer"> <a href="Chinhsachgiaonhan.html" >Chính sách giao nhận</a></p>
