@@ -91,7 +91,7 @@ for(var i=0;i<ListItemCart.length;i++)
     '<br>'+'Phone: '+nowItemcart.phone
     ;
     document.getElementById('thongtindonhang').innerHTML=nowItemcart.chitiet
-    document.getElementById('tongtien').innerHTML='Tổng tiền: '+nowItemcart.tongtien;
+    document.getElementById('tongtien').innerHTML='Tổng tiền: '+nowItemcart.tongtien + 'đ';
   }
 }
 
