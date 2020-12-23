@@ -4,7 +4,7 @@ window.onload=    function HienThiList(){
    
     if(ListItemOrder.length==0)
     {
-        html=' <div class="giohangtrong" <div class="trong"> GIỎ HÀNG ĐANG TRỐNG BẠN HÃY MUA THÊM SẢN PHẨM!</div> </div>';
+        html=' <div class="giohangtrong" <div class="trong"> KHÔNG CÓ LỊCH SỬ MUA HÀNG NÀO!</div> </div>';
 
     }
     else
