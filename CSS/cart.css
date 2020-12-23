@@ -79,10 +79,10 @@
 
 
 i{
-    cursor: pointer;
+    
 }
 i:hover{
-    color: red;
+ cursor: pointer;
 }
 .dongiacu{
   font-size: 13px;
