@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="shortcut icon" href="IMAGES/LOGO_TachNen.png">
+    <script src="JS/header_footer.js" type="text/javascript" defer></script> 
+  <script src="https://kit.fontawesome.com/1249a5fa2b.js" crossorigin="anonymous"></script>
+    <script src="JS/order.js"></script>
+    <link rel="stylesheet" href="CSS/cart.css">
+   <script src="JS/order.js"></script>
+   <style>
+       #hienthidonhang{
+           max-width: 700px;
+           margin: 150px auto;
+       }
+       .tieudetimkiem{
+            max-width: 1300px;
+            margin: 150px 100px auto auto;
+        }
+     
+        #chitietdonhang:hover{
+            cursor: pointer;
+            color: red;
+        }
+        .modal {
+    display: none;
+       position: fixed; /* Stay in place */
+       z-index: 1; /* Sit on top */
+       left: 0;
+       top: 0;
+       width: 100%; /* Full width */
+       height: 100%; /* Full height */
+       overflow: auto; /* Enable scroll if needed */
+       background-color: rgb(0,0,0); /* Fallback color */
+       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+       padding-top: 60px;
+     }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+   </style>
+</head>
+<body>
+
+    <div id="hienthidonhang">
+        <div class="tieudetimkiem">
+            <div>
+                <h1 style="text-align: center">LỊCH SỬ MUA HÀNG CỦA BẠN</h1>
+                <br>
+            </div>
+        </div>
+
+
+       
+        <div id="cart">
+            <!-- <table id="table"  class="cart">
+              <tr class="header-cart">
+                  <th class="item-header-cart">
+                      Mã đơn hàng
+                  </th>
+                  <th class="item-header-cart">
+                      Ngày mua hàng
+                  </th>
+                  <th class="item-header-cart">Đơn giá</th>
+                  <th class="item-header-cart">
+                      Tổng tiền
+                   </th>
+                  <th class="item-header-cart">Chi tiết</th>
+              
+              </tr>
+              <tr class="item-cart">
+                  <td class="td-item-cart">
+                      <img  src="IMAGES//BAN_WECO_CHESTER.jpg">                  
+                  </td>
+                  <td class="td-item-cart">
+                      Sách 1
+                  </td>
+                  <td class="td-item-cart">
+                      <span class="dongiacu">100000</span>
+                      100000</td>
+                  <td class="td-item-cart">
+                   <input id="soluong" min="1" max="10" type="number" value="2"/>
+                  </td>
+                  <td class="td-item-cart">
+                      <div id="chitietdonhang" onclick="xemchitiet()">Xem chi tiết</div>
+                  </td>
+              </tr>
+          </table>  -->
+       </div>
+      
+       
+       <div id="id01" class="modal">
+
+        <form class="modal-content animate" method="GET">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+
+            </div>
+            <div class="tieude">CHI TIẾT ĐƠN HÀNG <span id="idorder"></span></div>
+            <div class="container">
+                <div class="thongtingiaohang">
+                1. Thông tin người nhận:
+
+                </div>
+                <hr>
+                <div id="thongtingiaohang">
+                
+
+                </div>
+                <div class="thongtingiaohang">
+                    2. Chi tiết sản phẩm:
+    
+                    </div>
+                    <hr>
+                <div id="thongtindonhang"></div>
+                <div id="tongtien">
+                    
+                </div>
+               
+
+
+            </div>
+        </form>
+    </div>
+ 
+</body>
+    </div>
+   <script>
+
+
+
+
+ window.onload=    function HienThiList(){
+           // lấy danh sách sản phẩm ở localstorage hàm LayListItemCart() được tái sử dụng từ file cart.js
+           var ListItemOrder = LayListItemOrder();
+          
+           if(ListItemOrder.length==0)
+           {
+               html=' <div class="giohangtrong" <div class="trong"> GIỎ HÀNG ĐANG TRỐNG BẠN HÃY MUA THÊM SẢN PHẨM!</div> </div>';
+    
+           }
+           else
+           {
+            var  html=ChuyenListCartToHTML(ListItemOrder);
+           }
+
+           document.getElementById('cart').innerHTML=html;
+       }
+
+
+       function ChuyenListCartToHTML(ListitemCart){
+           var html= 
+           '    <table id="table"  class="cart">  '  + 
+ '                 <tr class="header-cart">  '  + 
+ '                     <th class="item-header-cart">  '  + 
+ '                         Mã đơn hàng  '  + 
+ '                     </th>  '  + 
+ '                     <th class="item-header-cart">  '  + 
+ '                         Ngày mua hàng  '  + 
+ '                     </th>  '  + 
+ '                     <th class="item-header-cart">Tổng tiền</th>  '  + 
+ '                      </th>  '  + 
+ '                     <th class="item-header-cart">Chi tiết</th>  '  + 
+ '                   '  + 
+ '                </tr>  ' ; 
+
+           for(var i=0;i<ListitemCart.length;i++){
+               html += chuyenItemCarttoHTML(ListitemCart[i]);
+           }
+
+           html +=  '</table>'  ; 
+
+           return html;
+       }
+
+   //    chuyển đối tượng giỏ hàng thành html hiển thị
+       function chuyenItemCarttoHTML(itemCart){
+        var ListItemCart = LayListItemOrder();
+       //DUYỆT DANH SÁCH CÁC SẢN PHẨM CÓ TRONG GIỞ HÀNG
+       
+       for(var i=0;i<ListItemCart.length;i++)
+       {
+           nowItemcart =ListItemCart[i];
+         // idProduct là ID lấy từ localstorage
+         //id là id sản phẩm thêm vào giỏ hàng
+         if(nowItemcart.idOrder== itemCart.idOrder)
+         {
+           var html =
+           '      <tr class="item-cart">  '  + 
+ '                     <td class="td-item-cart">  '  + 
+                                           'DH'        + nowItemcart.idOrder+
+ '                     </td>  '  + 
+ '                     <td class="td-item-cart">  '  + nowItemcart.ngay  + 
+ '                     </td>  '  + 
+ '                     <td class="td-item-cart">  '  + nowItemcart.tongtien +'đ'+'</td>  '  + 
+ '                     <td class="td-item-cart">  '  + 
+ '                         <div id="chitietdonhang" onclick="xemchitiet(nowItemcart.idOrder)">Xem chi tiết</div>  '  + 
+ '                     </td>  '  + 
+ '                </tr>  ' ; 
+      }
+      }
+      return html;
+      }
+
+
+function xemchitiet(idOrder){
+
+
+document.getElementById('id01').style.display='block';
+var ListItemCart = LayListItemOrder();
+       //DUYỆT DANH SÁCH CÁC SẢN PHẨM CÓ TRONG GIỞ HÀNG
+       
+       for(var i=0;i<ListItemCart.length;i++)
+       {
+    
+         // idProduct là ID lấy từ localstorage
+         //id là id sản phẩm thêm vào giỏ hàng
+         if(nowItemcart.idOrder==idOrder)
+         {
+            document.getElementById('idorder').innerHTML='DH'+nowItemcart.idOrder;
+            document.getElementById('thongtingiaohang').innerHTML= 'Khách hàng: '+ nowItemcart.ten+'<br>'  + 'Địa chỉ: '+nowItemcart.diachi+
+           '<br>'+'Email: '+nowItemcart.email+
+           '<br>'+'Phone: '+nowItemcart.phone
+           ;
+           document.getElementById('thongtindonhang').innerHTML=nowItemcart.chitiet
+           document.getElementById('tongtien').innerHTML='Tổng tiền: '+nowItemcart.tongtien;
+         }
+       }
+
+}
+
+   
+   </script>
+</body>
+</html>
