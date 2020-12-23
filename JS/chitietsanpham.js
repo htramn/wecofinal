@@ -52,7 +52,7 @@ window.onload= function timkiem() {
             document.getElementById("giamoi").innerHTML=price +'đ';
 
             document.getElementById("tensp").innerHTML=ten;
-            document.getElementById("hinhanhchitiet").innerHTML=  '<img  src="images/'+sanpham[j].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue+'" >'
+            document.getElementById("hinhanhchitiet").innerHTML=  '<img  src="IMAGES/'+sanpham[j].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue+'" >'
             document.getElementById("mausac").innerHTML=sanpham[j].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue;
             document.getElementById("kichthuoc").innerHTML='<br>'+'Chiểu dài:'+ sanpham[j].getElementsByTagName("LENGTH")[0].childNodes[0].nodeValue  +'cm<br>'+
             'Chiều rộng:'+ sanpham[j].getElementsByTagName("WIDTH")[0].childNodes[0].nodeValue  +'cm<br>'+
