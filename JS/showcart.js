@@ -4,7 +4,7 @@ window.onload=   function HienThiList(){
    
     if(ListItemCart.length==0)
     {
-        html=' <div class="giohangtrong" <div class="trong"> GIỎ HÀNG ĐANG TRỐNG BẠN HÃY MUA THÊM SẢN PHẨM!</div> </div>';
+        html=' <div class="giohangtrong" <div class="trong"> GIỎ HÀNG ĐANG TRỐNG, BẠN HÃY MUA THÊM SẢN PHẨM!</div> </div>';
         // ẩn button đặt hàng
 
         document.getElementById('btndathang').style.display='none'
