@@ -72,7 +72,7 @@ for(var i=0;i<ListItemCart.length;i++)
     var html =
      '     <tr class="item-cart">  '  + 
  '                     <td class="td-item-cart">  '  + 
- '                         <img class="img-cart"  src="IMAGES//'+nowItemcart.hinhanh+'">                    '  + 
+ '                         <img class="img-cart" src="IMAGES//'+nowItemcart.hinhanh+'">                    '  + 
  '                     </td>  '  + 
  '                     <td class="td-item-cart">  '  +nowItemcart.ten  + 
  '                     </td>  '  + 
