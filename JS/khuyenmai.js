@@ -29,8 +29,9 @@ window.onload= function loadDoc() {
                '<div class="item-photo">'+ 
                 dis +   
                 
-                '<a onclick="localStorage.setItem(\'textidsanpham\',\''+sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\',localStorage.setItem(\'textdongia\',\''+price+'\')"   href="chitietsanpham.html">  '
-                
+                '<a onclick="localStorage.setItem(\'textidsanpham\',\''+sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\') ,localStorage.setItem(\'textdongia\',\''+price+'\') " href="chitietsanpham.html">  '
+               // '<a onclick="setlocalstorage()" href="chitietsanpham.html">  '
+       
             +   '<img src="IMAGES//'+ sanpham[j].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue +'" alt="" srcset="">'+
                
                
@@ -40,9 +41,9 @@ window.onload= function loadDoc() {
                '<h2 class="item-name">'+ sanpham[j].getElementsByTagName("NAME")[0].childNodes[0].nodeValue+'</h2>'+
                '<div class="item-price">' +
                '<span class="item-price-old">'+ oldprice +'</span>'+'&nbsp'+
-               '<span class="item-price-new">'+ price +'đ</span>'+
+               '<span class="item-price-new">'+ price +'đ'+'</span>'+
                '</div>'+
-               '<button onclick="onclickAddCart(\''+ sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\')" class="btn snip1582">Thêm vào giỏ hàng</button>'+
+               '<button onclick="onclickAddCart(\''+ sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\')" class="btn snip1582">Thêm vào giỏ</button>'+
                '</div>';
           }                    
       }
