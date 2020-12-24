@@ -1,6 +1,6 @@
 
 //load sản phẩm lên giao diện
-window.onload= function loadDoc() {
+ function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
