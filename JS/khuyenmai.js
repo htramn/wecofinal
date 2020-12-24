@@ -51,4 +51,3 @@ window.onload= function loadDoc() {
     htmlDanhSachSanPham+='</div>';
     document.getElementById("products").innerHTML = htmlDanhSachSanPham;
   }
-  
