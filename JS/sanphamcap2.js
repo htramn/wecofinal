@@ -42,8 +42,9 @@
                 '<div class="item-photo">'+ 
                  dis +   
                  
-                 '<a onclick="localStorage.setItem(\'textidsanpham\',\''+sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\',localStorage.setItem(\'textdongia\',\''+price+'\')"   href="chitietsanpham.html">  '
-                 
+                 '<a onclick="localStorage.setItem(\'textidsanpham\',\''+sanpham[j].getElementsByTagName("ID_PRODUCT")[0].childNodes[0].nodeValue+'\') ,localStorage.setItem(\'textdongia\',\''+price+'\') " href="chitietsanpham.html">  '
+                // '<a onclick="setlocalstorage()" href="chitietsanpham.html">  '
+
              +   '<img src="IMAGES//'+ sanpham[j].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue +'" alt="" srcset="">'+
                 
                 
