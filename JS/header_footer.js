@@ -2,6 +2,17 @@
 //LÀ DÙNG ĐƯỢC ( NHỚ SET ID CỦA BODY LÀ MAIN NHÉ )
 const template = document.createElement('template');
 template.innerHTML = `
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0PS18MSCH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F0PS18MSCH');
+</script>
+
 <div id="header">
         <div id="header-top">
         <ul class="header-top">
